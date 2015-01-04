@@ -8,6 +8,10 @@
   template: src=resolv.conf
             dest=/etc/resolv.conf
 
+- name: Disable wifi dongle power management
+  template: src=wifi_mod.conf
+            dest=/etc/modprobe.d/{{ wifi_mod }}.conf
+
 - name: Install connection keep alive cron job
   cron: name="Connection keepalive"
         minute="*/1"
