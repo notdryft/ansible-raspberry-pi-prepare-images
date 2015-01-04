@@ -12,6 +12,17 @@
           groups='adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,netdev,input,spi,gpio'
           state=present
 
+- name: Make sudoers group 'NOPASSWD:'
+  lineinfile: name=/etc/sudoers
+              regexp="^%sudo"
+              line="%sudo ALL=(ALL{{ ':' }}ALL) NOPASSWD{{ ':' }} ALL"
+              state=present
+
+- name: Remove pi from sudoers
+  lineinfile: name=/etc/sudoers
+              regexp='^pi'
+              state=absent
+
 - name: Delete pistore.desktop file
   file: name=/home/{{ wanted_username }}/pistore.desktop
         state=absent
