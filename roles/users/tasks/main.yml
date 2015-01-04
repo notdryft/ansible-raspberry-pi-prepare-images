@@ -33,6 +33,16 @@
               line="alias ll='ls -l'"
               state=present
 
+- name: Copy pi's .profile
+  command: cp /home/pi/.profile /home/{{ wanted_username }}/.profile
+
+- name: Modify copied .profile rights
+  file: path=/home/{{ wanted_username }}/.profile
+        owner={{ wanted_username }}
+        group={{ wanted_username }}
+        mode=644
+        state=touch
+
 - name: Create authorized_keys file for wanted user
   authorized_key: user={{ wanted_username }}
                   key="{{ lookup('file', authorized_key) }}"
