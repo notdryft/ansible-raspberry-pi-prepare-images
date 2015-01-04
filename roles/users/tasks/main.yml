@@ -1,0 +1,28 @@
+---
+
+- name: Create group for wanted user
+  action: group
+          name={{ wanted_username }}
+          state=present
+
+- name: Create wanted user
+  action: user
+          name={{ wanted_username }}
+          group={{ wanted_username }}
+          groups='adm,sudo'
+          state=present
+
+- name: Delete pistore.desktop file
+  file: name=/home/{{ wanted_username }}/pistore.desktop
+        state=absent
+
+- name: Uncomment 'll' alias
+  lineinfile: name=/home/{{ wanted_username }}/.bashrc
+              regexp='^#?alias ll'
+              line="alias ll='ls -l'"
+              state=present
+
+- name: Create authorized_keys file for wanted user
+  authorized_key: user={{ wanted_username }}
+                  key="{{ lookup('file', authorized_key) }}"
+                  state=present

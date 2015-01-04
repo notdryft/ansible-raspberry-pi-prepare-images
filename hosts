@@ -1,0 +1,3 @@
+[localpis]
+pi0 ansible_ssh_host=localhost ansible_ssh_port=5000
+pi1 ansible_ssh_host=localhost ansible_ssh_port=5001

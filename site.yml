@@ -1,0 +1,9 @@
+---
+
+- hosts: localpis
+  user: pi
+
+  roles:
+    - users
+    - wifi
+    - qemu

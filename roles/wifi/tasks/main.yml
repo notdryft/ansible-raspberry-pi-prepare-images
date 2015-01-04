@@ -1,0 +1,28 @@
+---
+
+- name: Install network interfaces
+  template: src=interfaces
+            dest=/etc/network/interfaces
+
+- name: Install DNS resolver
+  template: src=resolv.conf
+            dest=/etc/resolv.conf
+
+- name: Install connection keep alive cron job
+  cron: name="Connection keepalive"
+        minute="*/1"
+        job="ping -c1 {{ pi_gateway }} > /dev/null 2>&1"
+
+- name: Install wifi checker script
+  template: src=wifi_check.sh
+            mode=744
+            dest=/root/wifi_check.sh
+
+- name: Install wifi checker cron job
+  cron: name="Wifi checker"
+        minute="*/5"
+        job="/root/wifi_check.sh"
+
+- name: Create wifi log shell alias
+  copy: src=bash_aliases
+        dest=/home/{{ wanted_username }}/.bash_aliases

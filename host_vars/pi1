@@ -1,0 +1,6 @@
+---
+
+pi_address: 192.168.1.191
+
+wanted_username: notdryft
+authorized_key: ~/.ssh/id_pi1.pub

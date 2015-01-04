@@ -1,0 +1,7 @@
+---
+
+- name: Uncomment preload file
+  lineinfile: name=/etc/ld.so.preload
+              regexp='^#?/usr/lib/arm-linux-gnueabihf/libcofi_rpi.so'
+              line='/usr/lib/arm-linux-gnueabihf/libcofi_rpi.so'
+              state=present

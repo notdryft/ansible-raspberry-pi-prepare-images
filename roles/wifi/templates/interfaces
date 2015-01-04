@@ -1,0 +1,16 @@
+# {{ ansible_managed }}
+
+auto wlan0
+
+iface lo inet loopback
+iface eth0 inet dhcp
+
+allow-hotplug wlan0
+iface wlan0 inet static
+
+address {{ pi_address }}
+netmask {{ pi_netmask }}
+gateway {{ pi_gateway }}
+
+wpa-ssid "{{ wpa_ssid }}"
+wpa-psk "{{ wpa_psk }}"
