@@ -9,7 +9,6 @@
   action: user
           name={{ wanted_username }}
           group={{ wanted_username }}
-          groups='adm,sudo'
           state=present
 
 - name: Delete pistore.desktop file
