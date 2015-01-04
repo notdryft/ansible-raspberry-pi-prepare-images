@@ -6,6 +6,6 @@
   roles:
     - host
     - users
-    - wifi_drivers
+#    - wifi_drivers
     - wifi
     - qemu

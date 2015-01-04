@@ -2,14 +2,14 @@
 
 # http://www.raspberrypi.org/forums/viewtopic.php?p=462982#p462982
 
-- name: Untar 8188eu driver file
-  unarchive: src=8188eu-20141107.tar.gz
-             dest=/tmp/
-  when: wifi_mod == '8188eu'
+#- name: Untar 8188eu driver file
+#  unarchive: src=8188eu-20141107.tar.gz
+#             dest=/tmp/
+#  when: wifi_mod == '8188eu'
 
-- name: Move 8188eu driver file to kernel drivers directory
-  command: install -p -m 644 /tmp/8188eu.ko /lib/modules/3.12.35+/kernel/drivers/net/wireless
-  when: wifi_mod == '8188eu'
+#- name: Move 8188eu driver file to kernel drivers directory
+#  command: install -p -m 644 /tmp/8188eu.ko /lib/modules/3.12.35+/kernel/drivers/net/wireless
+#  when: wifi_mod == '8188eu'
 
 #- name: Install kernel module 8188eu
 #  command: insmod /lib/modules/3.12.35+/kernel/drivers/net/wireless/8188eu.ko
