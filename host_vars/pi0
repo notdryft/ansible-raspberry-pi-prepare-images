@@ -1,5 +1,6 @@
 ---
 
+pi_hostname: pi0
 pi_address: 192.168.1.190
 
 wanted_username: notdryft
