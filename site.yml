@@ -4,6 +4,7 @@
   user: pi
 
   roles:
+    - host
     - users
     - wifi_drivers
     - wifi
