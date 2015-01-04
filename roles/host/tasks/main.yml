@@ -2,3 +2,9 @@
 
 - name: Change hostname
   hostname: name={{ pi_hostname }}
+
+- name: Also change /etc/hosts entry
+  lineinfile: name=/etc/hosts
+              regexp='^127\.0\.1\.1\t(raspberrypi|{{ pi_hostname }})'
+              line="127.0.1.1\t{{ pi_hostname }}"
+              state=present
