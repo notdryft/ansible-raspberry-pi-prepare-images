@@ -8,7 +8,7 @@
 - name: Create wanted user
   action: user
           name={{ wanted_username }}
-          group={{ wanted_username }}g
+          group={{ wanted_username }}
           groups='adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,netdev,input,spi,gpio'
           state=present
 
