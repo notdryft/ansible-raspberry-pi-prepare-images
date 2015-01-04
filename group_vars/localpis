@@ -1,0 +1,7 @@
+---
+
+pi_gateway: 192.168.1.1
+pi_netmask: 255.255.255.0
+
+wpa_ssid: <wpa_ssid>
+wpa_psk: <wpa_psk>
