@@ -30,3 +30,6 @@
 - name: Create wifi log shell alias
   copy: src=bash_aliases
         dest=/home/{{ wanted_username }}/.bash_aliases
+        owner={{ wanted_username }}
+        group={{ wanted_username }}
+        mode=644
