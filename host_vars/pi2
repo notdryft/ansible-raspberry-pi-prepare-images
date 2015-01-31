@@ -1,9 +1,9 @@
 ---
 
-pi_hostname: pi0
-pi_address: 192.168.1.190
+pi_hostname: pi2
+pi_address: 192.168.1.192
 
 wanted_username: notdryft
-authorized_key: ~/.ssh/id_pi0.pub
+authorized_key: ~/.ssh/id_pi2.pub
 
 wifi_mod: 8192cu
