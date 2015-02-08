@@ -3,6 +3,6 @@
 # http://www.raspberrypi.org/forums/viewtopic.php?p=462982#p462982
 
 - name: Deliver 8188eu firmware file
-  unarchive: src=rtl8188eufw.bin
-             dest=/lib/firmware/rtlwifi
+  copy: src=rtl8188eufw.bin
+        dest=/lib/firmware/rtlwifi
   when: wifi_mod == '8188eu'
