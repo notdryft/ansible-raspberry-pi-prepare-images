@@ -5,7 +5,8 @@
 
   roles:
     - host
+    - keyboard
     - users
-    - wifi_drivers
     - wifi
+    - wifi_drivers
     - qemu
