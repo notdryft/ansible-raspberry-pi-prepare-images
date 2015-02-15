@@ -5,4 +5,3 @@
               regexp='^XKBLAYOUT'
               line='XKBLAYOUT="fr"'
               state=present
-
