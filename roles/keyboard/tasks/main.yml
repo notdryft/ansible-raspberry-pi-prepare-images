@@ -1,0 +1,7 @@
+---
+
+- name: Make sure xkblayout is set to "fr"
+  lineinfile: name=/etc/ld.so.preload
+              regexp='^XKBLAYOUT'
+              line='XKBLAYOUT="fr"'
+              state=present
