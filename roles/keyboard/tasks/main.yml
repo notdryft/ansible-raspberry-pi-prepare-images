@@ -1,7 +1,8 @@
 ---
 
 - name: Make sure xkblayout is set to "fr"
-  lineinfile: name=/etc/ld.so.preload
+  lineinfile: name=/etc/default/keyboard
               regexp='^XKBLAYOUT'
               line='XKBLAYOUT="fr"'
               state=present
+
