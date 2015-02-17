@@ -5,7 +5,7 @@
 
   roles:
     - host
-#    - keyboard
+    - keyboard
     - users
     - wifi
     - wifi_drivers
