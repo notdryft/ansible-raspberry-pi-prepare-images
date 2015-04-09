@@ -1,7 +1,7 @@
 ---
 
 pi_hostname: pi1
-pi_address: 192.168.0.191
+pi_address: 192.168.0.201
 
 wanted_username: notdryft
 authorized_key: ~/.ssh/id_pi1.pub
